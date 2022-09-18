@@ -1,64 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# La 404 Devinci - Website for the association 
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project 📁</a>
+      <ul>
+        <li><a href="#features">Features 📑</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#Techs">Techs 💻</a>
+    </li>
+    <li><a href="#build-setup">Build Setup 🧑🏻‍💻</a></li>
+    <li><a href="#contributors">Contributors 👥</a></li>
+  </ol>
+</details>
 
-## About Laravel
+## About the project
+This project is about us. We want to expose web developpment to other people who think it's dark magic thing.
+We want to give to student a place where we share our learnings and other things related to this world with formation and courses.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This is just the begining 👀 ! 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+User features :
+- [ ] Navigation (nav bar in header) 
+- [ ] Footer
+- [ ] Home page with association presentation
+- [ ] Page with all project we've done 
+    - [ ] Filter by tags and date
+    - [ ] Filter by collaborators
+- [ ] Page with all our formation
+    - [ ] Filter by tags and date
+    - [ ] Filter by writers
+    - [ ] Page of one formation groups all of related courses
+- [ ] Page with our pictures since the beginning 🦖
 
-## Learning Laravel
+Admin features : 
+- [ ] Login Page
+- [ ] Logout
+- [ ] Dashboard
+- [ ] User management for admin
+- [ ] blog section to write projet and courses
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Techs
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- [Laravel](https://laravel.com/)
+- [VueJS](https://vuejs.org/)
+- [VITE](https://vitejs.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Build Setup
 
-### Premium Partners
+```bash
+# install dependencies
+$ composer install
+$ yarn install
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+# migrate database (after create it)
+$ php artisan migrate
 
-## Contributing
+# then just run for development:     
+$ php artisan serve
+$ yarn dev
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+```
+## Contributors
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+__Developed By :__
+- [Guillaume FINE](https://github.com/Cosmeak)
+- [Clément DUVIVIER](https://github.com/ClemOurs)
+- [Vincent MICHEL](https://github.com/CanarDev)
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+__Design By :__
+- [Léa]()
