@@ -61,7 +61,7 @@ $ composer install
 $ yarn install
 
 # migrate database (after create it)
-$ php artisan migrate
+$ php artisan migrate --seed 
 
 # then just run for development:     
 $ php artisan serve
