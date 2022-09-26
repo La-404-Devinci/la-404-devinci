@@ -18,14 +18,18 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'firstname',
+        'slug',
         'lastname',
-        // 'school',
+        'firstname',
         'email',
         'password',
         'display_role',
         'role',
         'avatar',
+        'twitter',
+        'github',
+        'dribbble',
+        'status',
     ];
 
     /**
@@ -47,20 +51,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /** ====================================================
-     * Relations
-     * =================================================== */
     public function projects()
     {
-        return $this->belongsToMany(Project::class);
+        return $this->belongsToMany(Project::class, 'projects_users');
     }
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class);
+        return $this->hasMany(Course::class);
     }
 
-    /** ====================================================
-     * Functions
-     * =================================================== */
+    public function avatar()
+    {
+        return $this->belongsTo(File::class, 'avatar');
+    }
 }

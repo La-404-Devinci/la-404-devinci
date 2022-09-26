@@ -2,15 +2,20 @@
 
 namespace App\Models;
 
-use App\Models\Project;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class File extends Model
 {
     use HasFactory;
 
+    protected $table = 'files';
+
     protected $fillable = [
-        'label'
+        'slug',
+        'uri',
+        'category',
+        'gallery',
+        'status',
     ];
 }

@@ -22,11 +22,11 @@ return new class extends Migration
             $table->string('password');
             $table->enum('display_role', ['president', 'secretary', 'treasurer', 'member', 'golden_member', 'extern'])->nullable();
             $table->enum('role', ['admin', 'member'])->default('member');
-            $table->string('avatar')->nullable();
+            $table->foreignId('avatar')->nullable()->constrained('files');;
             $table->string('twitter')->nullable();
             $table->string('github')->nullable();
             $table->string('dribbble')->nullable();
-            $table->boolean('status');
+            $table->boolean('status')->default(true);
             $table->timestamps();
 
             // Breeze

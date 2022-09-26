@@ -13,20 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('topics', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->string('slug');
-            $table->string('title');
-            $table->string('description');
-            $table->foreignId('icon')->nullable()->constrained('files');
-            $table->enum('category', [
-                'frameworks',
-                'languages',
-                'DA',
-                'tooling',
-                'techniques',
-            ]);
-            $table->boolean('published')->default(false);
+            $table->string('uri');
+            $table->enum('category', ['video', 'image', 'pdf']);
+            $table->boolean('gallery')->default(false);
             $table->boolean('status')->default(true);
             $table->timestamps();
         });
@@ -39,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('topics');
+        Schema::dropIfExists('files');
     }
 };

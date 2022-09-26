@@ -5,35 +5,33 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class Lesson extends Model
 {
     use HasFactory;
 
+    protected $table = 'lesson';
+
     protected $fillable = [
         'slug',
-        'user_id',
-        'topic_id',
+        'course_id',
         'title',
         'description',
+        'lesson_number',
+        'content',
+        'video',
         'thumbnail',
         'published',
         'status',
     ];
 
-    // Course writer
-    public function user()
+    public function course()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Course::class, 'course_id');
     }
 
-    public function topic()
+    public function video()
     {
-        return $this->belongsTo(Topic::class, 'topic_id');
-    }
-
-    public function lessons()
-    {
-        return $this->hasMany(Lesson::class, 'lesson_id');
+        return $this->belongsTo(File::class, 'video');
     }
 
     public function thumbnail()

@@ -15,6 +15,7 @@ class Project extends Model
         'slug',
         'name',
         'description',
+        'content',
         'thumbnail',
         'website',
         'dribbble',
@@ -24,20 +25,18 @@ class Project extends Model
         'status',
     ];
 
-    /** ====================================================
-     * Relations
-     * =================================================== */
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'projects_users');
     }
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'projects_tags');
     }
 
-    /** ====================================================
-     * Functions
-     * =================================================== */
+    public function thumbnail()
+    {
+        return $this->belongsTo(File::class, 'thumbnail');
+    }
 }

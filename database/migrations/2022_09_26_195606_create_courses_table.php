@@ -20,9 +20,9 @@ return new class extends Migration
             $table->foreignId('topic_id')->constrained('topics');
             $table->string('title');
             $table->string('description');
-            $table->string('thumbnail');
-            $table->boolean('published');
-            $table->boolean('status');
+            $table->foreignId('thumbnail')->nullable()->constrained('files');
+            $table->boolean('published')->default(false);
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

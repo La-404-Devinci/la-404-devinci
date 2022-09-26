@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->longText('content');
-            $table->string('thumbnail');
+            $table->foreignId('thumbnail')->nullable()->constrained('files');
             $table->string('website')->nullable();
             $table->string('dribbble')->nullable();
             $table->string('github')->nullable();

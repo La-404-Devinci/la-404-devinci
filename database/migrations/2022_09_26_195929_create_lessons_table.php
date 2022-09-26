@@ -21,9 +21,10 @@ return new class extends Migration
             $table->string('description');
             $table->integer('lesson_number');
             $table->longText('content');
-            $table->string('thumbnail');
-            $table->boolean('published');
-            $table->boolean('status');
+            $table->foreignId('video')->nullable()->constrained('files');
+            $table->foreignId('thumbnail')->nullable()->constrained('files');
+            $table->boolean('published')->default(false);
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
