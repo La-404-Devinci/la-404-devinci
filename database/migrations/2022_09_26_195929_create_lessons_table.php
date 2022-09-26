@@ -6,26 +6,35 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('lessons', function (Blueprint $table) {
             $table->id();
             $table->string('slug');
-            $table->string('name');
+            $table->foreignId('course_id')->constrained('courses');
+            $table->string('title');
             $table->string('description');
+            $table->integer('lesson_number');
             $table->longText('content');
             $table->string('thumbnail');
-            $table->string('website')->nullable();
-            $table->string('dribbble')->nullable();
-            $table->string('github')->nullable();
-            $table->boolean('published')->default(false);
-            $table->boolean('status')->default(true);
+            $table->boolean('published');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('lessons');
     }
 };

@@ -6,21 +6,32 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('formation_id')->constrained('formations');
             $table->string('slug');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('topic_id')->constrained('topics');
             $table->string('title');
-            $table->text('text');
+            $table->string('description');
             $table->string('thumbnail');
-            $table->boolean('published')->default(false);
-            $table->boolean('status')->default(true);
+            $table->boolean('published');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('courses');

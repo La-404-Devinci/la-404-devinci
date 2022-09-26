@@ -15,18 +15,23 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('lastname');
+            $table->string('slug');
             $table->string('firstname');
-            // $table->enum('school', ['IIM', 'ESILV', 'EMLV']);
+            $table->string('lastname');
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('display_role', ['president', 'secretary', 'treasurer', 'gloden_member', 'member'])->nullable();
-            $table->enum('role', ['user', 'member', 'admin'])->default('user');
-            $table->string('avatar', 2048)->nullable();
+            $table->enum('display_role', ['president', 'secretary', 'treasurer', 'member', 'golden_member', 'extern'])->nullable();
+            $table->enum('role', ['admin', 'member'])->default('member');
+            $table->string('avatar')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('github')->nullable();
+            $table->string('dribbble')->nullable();
+            $table->boolean('status');
+            $table->timestamps();
 
+            // Breeze
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
-            $table->timestamps();
         });
     }
 
