@@ -13,17 +13,19 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                rubik: 'Rubik, sans-serif',
+                poppins: 'Poppins, sans-serif'
             },
             colors: {
                 // Orange
                 'primary': '#F5A11A',
                 'primary-alt': '#EEBE70',
                 // Black ?
-                'secondary': '#000000',
+                'secondary': '#303030',
                 'backgray': '#F3F3F3',
             }
         },
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };
