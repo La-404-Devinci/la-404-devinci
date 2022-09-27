@@ -16,8 +16,8 @@ const showingNavigationDropdown = ref(false);
                         <!-- Logo -->
                         <div class="shrink-0 flex items-center">
                             <Link :href="route('dashboard')" class="shrink-0 flex items-center gap-2">
-                                <img src="@/../assets/images/logo.png" class="block h-9 w-auto" >
-                                <p>La 404 DeVinci</p>
+                                <img src="@/../assets/images/logo.png" class="block h-12 w-auto" >
+                                <p>La 404 Devinci</p>
                             </Link>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ const showingNavigationDropdown = ref(false);
 
                     <div class="hidden sm:flex sm:items-center sm:ml-6">
                         <!-- Settings Dropdown -->
-                        <button @click="showingNavigationDropdown = ! showingNavigationDropdown" class="inline-flex items-center justify-center p-2 rounded-md text-secondary hover:text-white hover:bg-primary focus:outline-none focus:bg-primary focus:text-white transition duration-150 ease-in-out">
+                        <button @click="showingNavigationDropdown = ! showingNavigationDropdown" class="inline-flex items-center justify-center p-2 rounded-full text-secondary hover:text-white hover:bg-primary focus:outline-none focus:bg-primary focus:text-white transition duration-150 ease-in-out">
                             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                 <path :class="{'hidden': showingNavigationDropdown, 'inline-flex': ! showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                                 <path :class="{'hidden': ! showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -74,7 +74,7 @@ const showingNavigationDropdown = ref(false);
                             <a
                                 href="https://www.instagram.com/"
                                 target="_blank"
-                                class="hover:underline hover:decoration-secondary"
+                                class="hover:underline decoration-secondary"
                             >
                                 <font-awesome-icon icon="fab fa-instagram" class="mr-2" />
                                 Instagram
@@ -84,7 +84,7 @@ const showingNavigationDropdown = ref(false);
                             <a
                                 href="https://fr-fr.facebook.com/"
                                 target="_blank"
-                                class="hover:underline hover:decoration-secondary"
+                                class="hover:underline decoration-secondary"
                             >
                                 <font-awesome-icon icon="fab fa-facebook-square" class="mr-2" />
                                 Facebook
@@ -93,7 +93,7 @@ const showingNavigationDropdown = ref(false);
                             <a
                                 href="https://github.com/"
                                 target="_blank"
-                                class="hover:underline hover:decoration-secondary"
+                                class="hover:underline decoration-secondary"
                             >
                                 <font-awesome-icon icon="fab fa-github-square" class="mr-1" />
                                 Github
