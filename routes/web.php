@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\FormationController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -14,18 +17,26 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Auth system
+require __DIR__.'/auth.php';
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+// Home page
+Route::get('/', [AppController::class, 'index'])->name('home');
+
+// Gallery
+Route::get('gallery', [AppController::class, 'gallery'])->name('gallery');
+
+// Formations
+Route::prefix('formation')->group(function () {
+    Route::get('/', [FormationController::class, 'index'])->name('index');
+    Route::get('/{formation}', [FormationController::class, 'show'])->name('show');
+    Route::get('/{formation}/{course}', [FormationController::class, 'courseShow'])->name('course.show');
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Projects
+Route::resource('project', ProjectController::class)->only(['index', 'show']);
 
-require __DIR__.'/auth.php';
+// Admin section
+Route::get('/dashboard', function () {
+    return Inertia::render('Admin/Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
