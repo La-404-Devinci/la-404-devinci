@@ -1,11 +1,10 @@
 <?php
 
 use App\Http\Controllers\AppController;
-use App\Http\Controllers\FormationController;
-use App\Http\Controllers\ProjectController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\ProjectController;
+use App\Http\Controllers\Dashboard\UserController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,20 +22,13 @@ require __DIR__.'/auth.php';
 // Home page
 Route::get('/', [AppController::class, 'index'])->name('home');
 
-// Gallery
-Route::get('gallery', [AppController::class, 'gallery'])->name('gallery');
-
-// Formations
-Route::prefix('formation')->group(function () {
-    Route::get('/', [FormationController::class, 'index'])->name('index');
-    Route::get('/{formation}', [FormationController::class, 'show'])->name('show');
-    Route::get('/{formation}/{course}', [FormationController::class, 'courseShow'])->name('course.show');
-});
-
-// Projects
-Route::resource('project', ProjectController::class)->only(['index', 'show']);
-
 // Admin section
-Route::get('/dashboard', function () {
-    return Inertia::render('Admin/Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::prefix('dashboard')->name('dashboard.')->middleware(['auth', 'verified'])->group(function() {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
+
+    // Members
+    Route::resource('user', UserController::class)->except('show')->middleware('admin');
+
+    // Projects
+    Route::resource('project', ProjectController::class)->except('show');
+});

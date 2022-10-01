@@ -1,9 +1,11 @@
 <template>
-    <AppLayout>
-        <template #content>
+	<AppLayout>
+		<template #header-title>
+			Accueil
+		</template>
 
-        </template>
-    </AppLayout>
+		<template #content />
+	</AppLayout>
 </template>
 
 <script>
