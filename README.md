@@ -40,9 +40,9 @@ User features :
 
 Admin features : 
 - [ ] Login Page
-- [ ] Logout
+- [x] Logout
 - [ ] Dashboard
-- [ ] User management for admin
+- [x] User management for admin
 - [ ] blog section to write projet and courses
 
 ## Techs
