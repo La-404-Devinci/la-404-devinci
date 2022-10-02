@@ -23,28 +23,6 @@ We want to give to student a place where we share our learnings and other things
 
 This is just the begining 👀 ! 
 
-### Features
-
-User features :
-- [ ] Navigation (nav bar in header) 
-- [ ] Footer
-- [ ] Home page with association presentation
-- [ ] Page with all project we've done 
-    - [ ] Filter by tags and date
-    - [ ] Filter by collaborators
-- [ ] Page with all our formation
-    - [ ] Filter by tags and date
-    - [ ] Filter by writers
-    - [ ] Page of one formation groups all of related courses
-- [ ] Page with our pictures since the beginning 🦖
-
-Admin features : 
-- [ ] Login Page
-- [x] Logout
-- [ ] Dashboard
-- [x] User management for admin
-- [ ] blog section to write projet and courses
-
 ## Techs
 
 - [Laravel](https://laravel.com/)
