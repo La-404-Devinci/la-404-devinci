@@ -26,7 +26,7 @@ const submit = () => {
 		</template>
 		<template #content>
 			<form @submit.prevent="submit()">
-				<div class="p-4 md:grid md:grid-cols-2 md:gap-6">
+				<div class="p-4 md:grid md:grid-cols-2 md:gap-4">
 					<div class="md:col-span-1">
 						<label for="firtname">Prénom</label>
 						<input

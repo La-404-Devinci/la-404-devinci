@@ -1,5 +1,7 @@
 import './bootstrap'
 import '../css/app.css'
+import '../css/v-select.css'
+import 'vue-select/dist/vue-select.css'
 
 import { createApp, h, } from 'vue'
 import { createInertiaApp, Head, Link } from '@inertiajs/inertia-vue3'
@@ -7,6 +9,7 @@ import { InertiaProgress } from '@inertiajs/progress'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m'
 import moment from 'moment'
+import vSelect from 'vue-select'
 
 // FontAwesome Livrary
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -28,6 +31,7 @@ createInertiaApp({
             .component('inertia-link', Link)
             .component('inertia-head', Head)
             .component('font-awesome-icon', FontAwesomeIcon)
+            .component('v-select', vSelect)
             .mixin({
                 methods: {
                     formatDate(date, format) {
