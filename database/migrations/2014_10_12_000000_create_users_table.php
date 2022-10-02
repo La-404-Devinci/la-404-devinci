@@ -20,8 +20,20 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('display_role', ['president', 'secretary', 'treasurer', 'member', 'golden_member', 'extern'])->nullable();
-            $table->enum('role', ['admin', 'member'])->default('member');
+            $table->enum('display_role', [
+                'president',
+                'secretary',
+                'treasurer',
+                'member',
+                'golden_member',
+                'alumni',
+                'extern'
+            ])->nullable();
+            $table->enum('role', [
+                'admin',
+                'instructor',
+                'user',
+            ])->default('user');
             $table->foreignId('avatar')->nullable()->constrained('files');;
             $table->string('twitter')->nullable();
             $table->string('github')->nullable();
