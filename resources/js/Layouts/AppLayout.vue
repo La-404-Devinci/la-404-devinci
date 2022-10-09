@@ -133,7 +133,7 @@ const showingNavigationDropdown = ref(false);
 								>
 									<font-awesome-icon
 										icon="fab fa-github-square"
-										class="mr-1"
+										class="mr-2"
 									/>
 									Github
 								</a>

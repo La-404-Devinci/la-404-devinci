@@ -22,7 +22,9 @@ const submit = () => {
 <template>
 	<DashboardLayout>
 		<template #header>
-			<p>Création d'un membre</p>
+			<h2 class="font-semibold text-xl text-gray-800 leading-tight">
+				Création d'un membre
+			</h2>
 		</template>
 		<template #content>
 			<form @submit.prevent="submit()">

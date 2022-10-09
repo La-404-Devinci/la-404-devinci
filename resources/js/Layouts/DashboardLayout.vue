@@ -273,10 +273,8 @@ const showingNavigationDropdown = ref(false);
 		</nav>
 
 		<header class="bg-white shadow">
-			<div class="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8">
-				<h1 class="text-2xl font-bold tracking-tight text-gray-900 flex justify-between align-items-center">
-					<slot name="header" />
-				</h1>
+			<div class="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-8 flex justify-between align-items-center">
+                <slot name="header" />
 			</div>
 		</header>
 

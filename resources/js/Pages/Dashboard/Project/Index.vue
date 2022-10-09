@@ -9,7 +9,9 @@ const props = defineProps({
 <template>
 	<DashboardLayout>
 		<template #header>
-			<p>Projets</p>
+			<h2 class="font-semibold text-xl text-gray-800 leading-tight">
+				Projets
+			</h2>
 			<inertia-link
 				:href="route('dashboard.project.create')"
 				class="rounded bg-green-500 text-white py-1 px-2 text-sm h-fit hover:opacity-75 duration-200"
