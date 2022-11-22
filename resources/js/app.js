@@ -13,11 +13,11 @@ import vSelect from 'vue-select'
 
 // FontAwesome Livrary
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEnvelope, faMapPin, faPhone, faPowerOff } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faEnvelope, faMapPin, faPhone, faPowerOff } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faFacebookSquare, faGithubSquare, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-regular-svg-icons'
-library.add(faEnvelope, faMapPin, faPhone, faGithubSquare, faFacebookSquare, faInstagram, faPenToSquare, faTrashCan, faPowerOff)
+library.add(faEnvelope, faMapPin, faPhone, faGithubSquare, faFacebookSquare, faInstagram, faPenToSquare, faTrashCan, faPowerOff, faBars)
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 

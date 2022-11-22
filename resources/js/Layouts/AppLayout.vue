@@ -1,20 +1,19 @@
 <script setup>
 import { ref } from 'vue';
-import { Link } from '@inertiajs/inertia-vue3';
 
 const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
-	<div class="min-h-screen text-secondary">
-		<nav class="bg-wave font-bold shadow">
+	<div class="min-h-screen text-secondary flex flex-col justify-between">
+		<nav class="w-full h-auto font-bold shadow rounded-b-lg fixed bg-white">
 			<!-- Primary Navigation Menu -->
-			<div class="w-9/12 mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="mx-auto px-6 lg:px-[80px]">
 				<div class="flex justify-between h-16">
 					<div class="flex">
 						<!-- Logo -->
 						<div class="shrink-0 flex items-center">
-							<Link
+							<inertia-link
 								:href="route('home')"
 								class="shrink-0 flex items-center gap-2"
 							>
@@ -23,17 +22,73 @@ const showingNavigationDropdown = ref(false);
 									class="block h-12 w-auto"
 								>
 								<p>La 404 Devinci</p>
-							</Link>
+							</inertia-link>
 						</div>
 					</div>
 
 					<div class="flex">
-						<!-- Navigation Links -->
-						<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex ">
-							<p class="inline-flex items-center px-1 text-base font-semibold leading-5 text-secondary">
-								<slot name="header-title" />
-							</p>
-						</div>
+						<!-- Navigation inertia-links -->
+						<ul class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+							<li class="inline-flex items-center px-1 text-base font-semibold leading-5 text-secondary">
+								<inertia-inertia-link
+									:href="route('home')"
+									class="hover:text-primary duration-300"
+									:class="{'text-primary': route().current('home')}"
+								>
+									Accueil
+								</inertia-inertia-link>
+							</li>
+
+							<li class="inline-flex items-center px-1 text-base font-semibold leading-5 text-secondary">
+								<inertia-inertia-link
+									:href="route('home')"
+									class="hover:text-primary duration-300"
+									:class="{'text-primary': route().current().includes('course.')}"
+								>
+									Apprendre
+								</inertia-inertia-link>
+							</li>
+
+							<li class="inline-flex items-center px-1 text-base font-semibold leading-5 text-secondary">
+								<inertia-inertia-link
+									:href="route('home')"
+									class="hover:text-primary duration-300"
+									:class="{'text-primary': route().current().includes('project.')}"
+								>
+									Réaliser
+								</inertia-inertia-link>
+							</li>
+
+							<li class="inline-flex items-center px-1 text-base font-semibold leading-5 text-secondary">
+								<inertia-inertia-link
+									:href="route('home')"
+									class="hover:text-primary duration-300"
+									:class="{'text-primary': route().current().includes()}"
+								>
+									Partager
+								</inertia-inertia-link>
+							</li>
+
+							<li class="inline-flex items-center px-1 text-base font-semibold leading-5 text-secondary">
+								<inertia-inertia-link
+									:href="route('home')"
+									class="hover:text-primary duration-300"
+									:class="{'text-primary': route().current().includes('news.')}"
+								>
+									Actualité
+								</inertia-inertia-link>
+							</li>
+
+							<li class="inline-flex items-center px-1 text-base font-semibold leading-5 text-secondary">
+								<inertia-inertia-link
+									:href="route('home')"
+									class="hover:text-primary duration-300"
+									:class="{'text-primary': route().current().includes('contact')}"
+								>
+									Contact
+								</inertia-inertia-link>
+							</li>
+						</ul>
 					</div>
 
 					<div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -42,27 +97,7 @@ const showingNavigationDropdown = ref(false);
 							class="inline-flex items-center justify-center p-2 rounded-full text-secondary hover:text-white hover:bg-primary focus:outline-none focus:bg-primary focus:text-white transition duration-150 ease-in-out"
 							@click="showingNavigationDropdown = ! showingNavigationDropdown"
 						>
-							<svg
-								class="h-6 w-6"
-								stroke="currentColor"
-								fill="none"
-								viewBox="0 0 24 24"
-							>
-								<path
-									:class="{'hidden': showingNavigationDropdown, 'inline-flex': ! showingNavigationDropdown }"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M4 6h16M4 12h16M4 18h16"
-								/>
-								<path
-									:class="{'hidden': ! showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M6 18L18 6M6 6l12 12"
-								/>
-							</svg>
+							<font-awesome-icon icon="fa-solid fa-bars" />
 						</button>
 					</div>
 				</div>
@@ -70,12 +105,12 @@ const showingNavigationDropdown = ref(false);
 		</nav>
 
 		<!-- Page Content -->
-		<main class="container mx-auto mt-12">
+		<main class="pt-16">
 			<slot name="content" />
 		</main>
 
 		<!-- Footer Content -->
-		<footer class="w-100 h-auto">
+		<footer class="h-auto">
 			<div class="bg-wave flex justify-around items-center">
 				<div class="container flex justify-around gap-8 py-12">
 					<div class="w-1/8">

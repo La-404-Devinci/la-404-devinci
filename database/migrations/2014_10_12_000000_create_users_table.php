@@ -34,7 +34,7 @@ return new class extends Migration
                 'instructor',
                 'user',
             ])->default('user');
-            $table->foreignId('avatar')->nullable()->constrained('files');;
+            $table->foreignId('avatar')->nullable()->constrained('files');
             $table->string('twitter')->nullable();
             $table->string('github')->nullable();
             $table->string('dribbble')->nullable();

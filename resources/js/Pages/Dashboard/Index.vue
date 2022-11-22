@@ -14,8 +14,6 @@ import DashboardLayout from '@/Layouts/DashboardLayout.vue';
 			</h2>
 		</template>
 
-		<template #content>
-			<MarkdownEditor initialValue="valeur initial" />
-		</template>
+		<template #content />
 	</DashboardLayout>
 </template>
