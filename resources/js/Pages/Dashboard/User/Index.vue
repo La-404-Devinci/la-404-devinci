@@ -8,7 +8,9 @@ const props = defineProps([
 <template>
 	<DashboardLayout>
 		<template #header>
-			<p>Membres</p>
+			<h2 class="font-semibold text-xl text-gray-800 leading-tight">
+				Membres
+			</h2>
 			<inertia-link
 				:href="route('dashboard.user.create')"
 				class="rounded bg-green-500 text-white py-1 px-2 text-sm h-fit hover:opacity-75 duration-200"

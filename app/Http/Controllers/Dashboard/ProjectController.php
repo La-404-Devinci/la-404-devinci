@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Tag;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -49,18 +50,42 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'name' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'content' => ['nullable', 'string'],
+            'website' => ['nullable', 'url'],
+            'dribbble' => ['nullable', 'url'],
+            'github' => ['nullable', 'url'],
+            'published' => ['required', 'boolean'],
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+            'thumbnail' => ['nullable', 'string'],
+            'tags' => ['required', 'array'],
+            'users' => ['required', 'array'],
+        ]);
+
+        try {
+            // $thumbnail = File::create([
+            //     'uri' =>
+            // ]);
+
+            $project = Project::create([
+                'name' => $request->name,
+                'description' => $request->description,
+                'content' => $request->content,
+                'website' => $request->website,
+                'dribbble' => $request->dribbble,
+                'github' => $request->github,
+                'published' => $request->pusblised
+            ]);
+
+            $project->users()->sync($request->users);
+            $project->tags()->sync($request->tags);
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
+
+        return redirect()->route('dashboard.project.index');
     }
 
     /**

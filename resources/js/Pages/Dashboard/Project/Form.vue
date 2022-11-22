@@ -20,7 +20,7 @@ let form = useForm({
 
     thumbnail: props?.project?.thumbnail ?? '',
     tags: props?.project?.tags ?? [],
-    users: '',
+    users: props?.project?.users ?? [],
 })
 
 const submit = (published = false) => {
@@ -32,7 +32,9 @@ const submit = (published = false) => {
 <template>
 	<DashboardLayout>
 		<template #header>
-			<p>Création d'un projet</p>
+			<h2 class="font-semibold text-xl text-gray-800 leading-tight">
+				Création d'un projet
+			</h2>
 		</template>
 
 		<template #content>
@@ -115,7 +117,7 @@ const submit = (published = false) => {
 						>
 					</div>
 
-                    <div class="md:col-span-2">
+					<div class="md:col-span-2">
 						<label for="users">Participants:</label>
 						<v-select
 							v-model="form.users"
