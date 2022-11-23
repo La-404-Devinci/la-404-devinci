@@ -23,7 +23,6 @@ return new class extends Migration
             $table->longText('content');
             $table->foreignId('video')->nullable()->constrained('files');
             $table->foreignId('thumbnail')->nullable()->constrained('files');
-            $table->boolean('published')->default(false);
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

@@ -26,7 +26,6 @@ return new class extends Migration
                 'tooling',
                 'techniques',
             ]);
-            $table->boolean('published')->default(false);
             $table->boolean('status')->default(true);
             $table->timestamps();
         });
