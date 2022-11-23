@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\AppController;
-use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\Dashboard\ProjectController;
-use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\Backoffice\DashboardController;
+use App\Http\Controllers\Backoffice\ProjectController;
+use App\Http\Controllers\Backoffice\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
