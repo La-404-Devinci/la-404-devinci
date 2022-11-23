@@ -19,7 +19,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return Inertia::render('Dashboard/User/Index', [
+        return Inertia::render('Backoffice/User/Index', [
             'users' => $users,
         ]);
     }
@@ -31,7 +31,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Dashboard/User/Form');
+        return Inertia::render('Backoffice/User/Form');
     }
 
     /**
@@ -86,7 +86,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return Inertia::render('Dashboard/User/Form', [
+        return Inertia::render('Backoffice/User/Form', [
             'user' => $user,
         ]);
     }

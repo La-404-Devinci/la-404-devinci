@@ -21,7 +21,7 @@ class ProjectController extends Controller
     {
         $projects = Project::all()->load(['tags', 'thumbnail']);
 
-        return Inertia::render('Dashboard/Project/Index', [
+        return Inertia::render('Backoffice/Project/Index', [
             'projects' => $projects,
         ]);
     }
@@ -36,7 +36,7 @@ class ProjectController extends Controller
         $tags = Tag::all();
         $users = User::all();
 
-        return Inertia::render('Dashboard/Project/Form', [
+        return Inertia::render('Backoffice/Project/Form', [
             'tags' => $tags,
             'users' => $users,
         ]);
