@@ -49,9 +49,9 @@ const showingNavigationDropdown = ref(false);
 								</inertia-link>
 
 								<inertia-link
-									href="#"
+									:href="route('dashboard.course.index')"
 									class="hover:bg-primary px-3 py-2 rounded-md text-sm font-medium duration-300"
-									:class="{ 'bg-primary': route().current()?.includes('dashboard.index') }"
+									:class="{ 'bg-primary': route().current()?.includes('dashboard.course.') }"
 								>
 									Formations
 								</inertia-link>
@@ -281,7 +281,7 @@ const showingNavigationDropdown = ref(false);
 
 		<main>
 			<div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-				<div class="rounded-lg bg-white shadow border-gray-500 overflow-auto">
+				<div class="rounded bg-white shadow border-gray-500 overflow-auto">
 					<slot name="content" />
 				</div>
 			</div>

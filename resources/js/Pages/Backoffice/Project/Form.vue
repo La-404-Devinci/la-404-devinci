@@ -4,28 +4,28 @@ import MarkdownEditor from '@/Components/MarkdownEditor.vue'
 import { useForm } from '@inertiajs/inertia-vue3'
 
 const props = defineProps({
-    project: Object,
-    tags: Array,
-    users: Array,
+  project: Object,
+  tags: Array,
+  users: Array,
 })
 
 let form = useForm({
-    name: props?.project?.name ?? '',
-    description: props?.project?.description ?? '',
-    content: props?.project?.content ?? '',
-    website: props?.project?.website ?? '',
-    dribbble: props?.project?.dribbble ?? '',
-    github: props?.project?.github ?? '',
-    published: props?.project?.published ?? 0,
+  name: props?.project?.name ?? '',
+  description: props?.project?.description ?? '',
+  content: props?.project?.content ?? '',
+  website: props?.project?.website ?? '',
+  dribbble: props?.project?.dribbble ?? '',
+  github: props?.project?.github ?? '',
+  published: props?.project?.published ?? 0,
 
-    thumbnail: props?.project?.thumbnail ?? '',
-    tags: props?.project?.tags ?? [],
-    users: props?.project?.users ?? [],
+  thumbnail: props?.project?.thumbnail ?? '',
+  tags: props?.project?.tags ?? [],
+  users: props?.project?.users ?? [],
 })
 
 const submit = (published = false) => {
-    if (published) props.form.published = 1
-    form.post(route('dashboard.project.store'))
+  if (published) props.form.published = 1
+  form.post(route('dashboard.project.store'))
 }
 </script>
 

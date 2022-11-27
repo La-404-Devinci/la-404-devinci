@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\Backoffice\CourseController;
 use App\Http\Controllers\Backoffice\DashboardController;
+use App\Http\Controllers\Backoffice\LessonController;
 use App\Http\Controllers\Backoffice\ProjectController;
 use App\Http\Controllers\Backoffice\UserController;
 use Illuminate\Support\Facades\Route;
@@ -31,4 +33,8 @@ Route::prefix('dashboard')->name('dashboard.')->middleware(['auth', 'verified'])
 
     // Projects
     Route::resource('project', ProjectController::class)->except('show');
+
+    // Courses
+    Route::resource('course', CourseController::class)->except('show');
+    Route::resource('course.lesson', LessonController::class)->except(['index', 'show']);
 });
